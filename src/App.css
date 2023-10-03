@@ -1,30 +1,17 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+  color-scheme: light dark;
+  padding: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes welcome-slide {
+  0% {
+    top: 0px;
+}
+ 
+100% {
+    bottom: 275px;
+}
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -33,10 +20,84 @@
   }
 }
 
-.card {
-  padding: 2em;
+
+#navbar {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  width: 100%; 
+  background-color: chartreuse;
 }
 
-.read-the-docs {
-  color: #888;
+#navbar-selectors {
+  display: flex;
+  justify-content: flex-end;
+  background-color: rgb(32, 93, 4);
+  border-radius: 1.5px;
+  text-decoration: none;
+  color: white;
+  padding: 7px 1em;
+  margin: 2.5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.89);
+
 }
+
+#navbar-selectors:hover {
+  background-color: rgb(47, 132, 7);
+  border-radius: 1.5px;
+  text-decoration: none;
+  color: white;
+  padding: 7px 1em;
+  margin: 2.5px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  transition: .75s linear;
+}
+
+.dog-pics {
+  width: 150px;
+  height: auto;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  margin-top: 275px;
+  font-size: 75px;
+  animation: welcome-slide 2.5s ease-in;
+
+}
+
+.single-player-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 375px;
+  background-color: lightgrey;
+  border-radius: 25px;
+  margin: 6px;
+  color: black;
+
+}
+
+.info-container {
+  width: 100%;
+}
+
+
+
+/* For animations: name duration timing-function delay iteration-count direction fill-mode;
+
+
+
+
+*NOTES*
+- seperate Single Player into 2 components (Single Player and the card)
+- when press card => should take you to home/singleplayer/Id and take ID from fetch call and display more info in component
+
+
+
+
+
+*/
