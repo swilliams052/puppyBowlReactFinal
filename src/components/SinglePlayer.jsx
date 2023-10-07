@@ -1,21 +1,45 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+
 
 
 
 const SinglePlayer = (props) => {
-    return (
-        <div className='single-player-card' onClick={() => props.setPlayer(props.player)}> 
-            <h1>{props.player.name}</h1>
-            <img className='dog-pics' src={`${props.player.imageUrl}`} />
-            <div className='info-container'>
-                <h2>Breed: {props.player.breed}</h2>
-                <h2>Status: {props.player.status}</h2>
-            </div>
-        </div>
-
-        
-    )
+    const { id } = useParams();
+    const [player, setPlayer] = useState([]);
     
+
+    useEffect( () => {
+        try { const getPlayer = async () => {
+            const response = await fetch(`https://fsa-puppy-bowl.herokuapp.com/api/2109-UNF-HY-WEB-PT/players/${id}`)
+
+        const data = await response.json();
+        setPlayer(player)
+        console.log(data)
+
+        }
+        getPlayer()  
+        } catch (error) {
+            console.log(error)
+        }
+    },[]); 
+
+    return (
+        <div className='Single-Player-View'>
+            <h1>
+             Single Player
+            </h1>  
+                <h2>
+                Name: {player.name}
+                Breed: {player.breed}
+
+                </h2>
+        </div>
+    )
+
 }
+
+
+
 
 export default SinglePlayer

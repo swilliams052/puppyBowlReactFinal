@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import fetchPlayers from "./ajaxHelpers"
-import SinglePlayer from "./SinglePlayer"
+import Player from "./Player"
 
 const AllPlayers = (props) => {
     const [players, setPlayers] = useState([])
@@ -20,7 +20,8 @@ const AllPlayers = (props) => {
         <div className='all-players'>
             {players.map((player) => {
                 return (
-                    <SinglePlayer key={player.id} player={player} setPlayer={propssetPlayer} />
+                    <Player key={player.id} player={player} setPlayer={props.setPlayer} />
+
                 )
             })}
         </div>
