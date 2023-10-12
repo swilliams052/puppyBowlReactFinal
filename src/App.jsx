@@ -7,7 +7,8 @@ import Home from './components/Home'
 
 import { Routes, Route, Link, useParams } from 'react-router-dom'
 import SinglePlayer from './components/SinglePlayer'
-import Player from './components/Player'
+import SearchResults from './components/SearchResults'
+
 
 
 function App() {
@@ -30,6 +31,9 @@ function App() {
             <Link id='navbar-selectors' to='/SinglePlayer/:id'>
               Single Player
             </Link>
+            <Link id='navbar-selectors' to='/Search'>
+              Search
+            </Link>
           </div>
           <div id="main-section">
             <Routes>
@@ -37,7 +41,8 @@ function App() {
               <Route path='/AllPlayers' element={<AllPlayers setPlayer={setPlayer} />} />
               <Route path='/NewPlayerForm'  element={<NewPlayerForm />} />
               <Route path='/Player'  element= {<div></div>} />
-              <Route path='/SinglePlayer/:id'  element= {<SinglePlayer player={player} />} />
+              <Route path='/SinglePlayer/:id'  element= {<SinglePlayer />} />
+              <Route path='/Search'  element= {<SearchResults player= {player}/>} />
             </Routes>
           </div>
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import SinglePlayer from "./SinglePlayer";
 
 
 const Player = (props) => {
@@ -13,7 +13,7 @@ const Player = (props) => {
                 <h2>Status: {props.player.status}</h2>
             </div>
             <Link to={`/SinglePlayer/${props.player.id}`}>
-                <button>
+                <button onClick="">
                     Details
                 </button>
             </Link>
